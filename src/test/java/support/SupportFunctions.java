@@ -5,10 +5,9 @@ import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import com.jayway.restassured.response.ResponseBody;
+import java.io.IOException;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.io.IOException;
 
 public class SupportFunctions {
     private static Response response;
@@ -18,7 +17,7 @@ public class SupportFunctions {
         return "src/test/resources/" + Json + ".json";
     }
 
-    public static ResponseBody post(String url, String json) {
+    public static Response post(String url, String json) {
         response = RestAssured.given()
                 .header("content-type", MyConfig.CONTENT_TYPE)
                 .body(json)
@@ -26,7 +25,7 @@ public class SupportFunctions {
                 .when()
                 .post(url);
 
-        return response.getBody();
+        return response;
     }
 
     public static ResponseBody put(String url, String json) {

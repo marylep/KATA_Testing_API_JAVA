@@ -1,26 +1,12 @@
 package dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.util.List;
-
-public class Owner {
+public class PetsOwner {
     private int id;
     private String firstName;
     private String lastName;
     private String address;
     private String city;
     private String telephone;
-    @JsonIgnore
-    private List<Pet> pets;
-
-    @JsonIgnore
-    public List<Pet> getPets() {
-        return pets;
-    }
-
-    public void setPets(List<Pet> pets) {
-        this.pets = pets;
-    }
 
     public int getId() {
         return id;
@@ -69,4 +55,5 @@ public class Owner {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
 }

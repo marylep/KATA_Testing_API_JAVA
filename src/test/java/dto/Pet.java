@@ -9,7 +9,7 @@ public class Pet {
     private String name;
     private String birthDate;
     private Type type;
-    private Owner owner;
+    private PetsOwner owner;
     @JsonIgnore
     private ArrayList<Visit> visits;
 
@@ -45,14 +45,6 @@ public class Pet {
         this.type = type;
     }
 
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
     public ArrayList<Visit> getVisits() {
         return visits;
     }
@@ -61,6 +53,12 @@ public class Pet {
         this.visits = visits;
     }
 
+    public PetsOwner getOwner() {
+        return owner;
+    }
 
+    public void setOwner(PetsOwner owner) {
+        this.owner = owner;
+    }
 
 }
